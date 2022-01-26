@@ -3,20 +3,18 @@ import geni.rspec.pg as rspec
 
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
-
 #Create a XenVM
 node = request.XenVM("node")
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
-node.routable_control_ip ="true"
+node.routable_control_ip = "true"
 
-node.addService(rspec.Execute(shell="/bon/sh",
+node.addService(rspec.Execute(shell="/bin/sh",
                               command= "sudo apt update"))
-node.addService(rspec.Execute(shell="/bon/sh",
+node.addService(rspec.Execute(shell="/bin/sh",
                               command= "sudo apt install -y apache 2"))
-node.addService(rspec.Execute(shell="/bon/sh",
+node.addService(rspec.Execute(shell="/bin/sh",
                               command= 'sudo ufw allow in "Apache Full"'))
-node.addService(rspec.Execute(shell="/bon/sh",
-                              command= 'sudo systemt1 stsus apache2'))
-
+node.addService(rspec.Execute(shell="/bin/sh",
+                              command= 'sudo systemct1 status apache2'))
 #Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()

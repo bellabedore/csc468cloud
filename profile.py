@@ -19,4 +19,4 @@ node.addService(rspec.Execute(shell="/bon/sh",
                               command= 'sudo systemt1 stsus apache2'))
 
 #Print the RSpec to the enclosing page.
-portal.context.printRequestRspec()
+portal.context.printRequestRSpec()

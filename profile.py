@@ -2,7 +2,7 @@ import geni.portal as portal
 import geni.rspec.pg as rspec
 
 # Create a Request object to start building the RSpec.
-request = portal,context, makeRequestRSpec()
+request = portal.context.makeRequestRSpec()
 
 #Create a XenVM
 noe = request.XenVM("node")
